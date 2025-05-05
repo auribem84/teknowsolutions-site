@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { Play } from "lucide-react";
+import { ArrowRight, Play } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -22,10 +22,18 @@ const Hero = () => {
             Build, optimize, and secure your technology for tomorrow's challenges.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 animate-fade-up" style={{ animationDelay: "0.3s" }}>
-            <Button variant="default" size="lg" className="bg-gradient-to-r from-tekmo-teal to-tekmo-purple hover:from-tekmo-purple hover:to-tekmo-teal transition-all">
-              Start Your Free Audit
+            <Button 
+              variant="default" 
+              size="lg" 
+              className="bg-gradient-to-r from-tekmo-teal to-tekmo-purple hover:from-tekmo-purple hover:to-tekmo-teal transition-all"
+            >
+              Start Your Free Audit <ArrowRight size={16} className="ml-2" />
             </Button>
-            <Button variant="outline" size="lg" className="text-white border-white/60 hover:bg-white/10">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="text-white border-white/60 hover:bg-white/10"
+            >
               <Play size={16} className="mr-2" /> Watch Demo
             </Button>
           </div>
