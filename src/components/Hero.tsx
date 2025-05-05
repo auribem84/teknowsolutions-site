@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -26,15 +27,21 @@ const Hero = () => {
               variant="default" 
               size="lg" 
               className="bg-gradient-to-r from-tekmo-teal to-tekmo-purple hover:from-tekmo-purple hover:to-tekmo-teal transition-all"
+              asChild
             >
-              Start Your Free Audit <ArrowRight size={16} className="ml-2" />
+              <Link to="/contact">
+                Start Your Free Audit <ArrowRight size={16} className="ml-2" />
+              </Link>
             </Button>
             <Button 
               variant="outline" 
               size="lg" 
               className="text-white border-white/60 hover:bg-white/10"
+              asChild
             >
-              <Play size={16} className="mr-2" /> Watch Demo
+              <Link to="/contact">
+                <Play size={16} className="mr-2" /> Schedule a Free Consultation
+              </Link>
             </Button>
           </div>
         </div>

@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { MessageCircle, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const FloatingActionButton = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,11 +20,11 @@ const FloatingActionButton = () => {
             <p className="text-sm text-muted-foreground">How can we help you?</p>
           </div>
           <div className="space-y-2">
-            <Button variant="default" className="w-full bg-gradient-to-r from-tekmo-teal to-tekmo-purple">
-              Schedule a Call
+            <Button variant="default" className="w-full bg-gradient-to-r from-tekmo-teal to-tekmo-purple" asChild>
+              <Link to="/contact">Schedule a Call</Link>
             </Button>
-            <Button variant="outline" className="w-full">
-              Chat with Us
+            <Button variant="outline" className="w-full" asChild>
+              <Link to="/contact">Chat with Us</Link>
             </Button>
           </div>
         </div>
