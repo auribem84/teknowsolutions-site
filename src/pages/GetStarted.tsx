@@ -1,6 +1,5 @@
-
 import { useState } from 'react';
-import { Calendar, Check, ArrowRight, MessageCircle, Play } from "lucide-react";
+import { Calendar as CalendarIcon, Check, ArrowRight, MessageCircle, Play, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
@@ -28,9 +27,9 @@ const formSchema = z.object({
 
 const GetStarted = () => {
   const [step, setStep] = useState(1);
-  const [selectedGoals, setSelectedGoals] = useState([]);
+  const [selectedGoals, setSelectedGoals] = useState<string[]>([]);
   const [selectedPath, setSelectedPath] = useState("");
-  const [selectedDate, setSelectedDate] = useState();
+  const [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined);
   const { toast } = useToast();
   
   const form = useForm({
@@ -54,7 +53,7 @@ const GetStarted = () => {
     console.log("Form submitted:", data);
   };
   
-  const handleGoalSelection = (goal) => {
+  const handleGoalSelection = (goal: string) => {
     setSelectedGoals(prev => {
       if (prev.includes(goal)) {
         return prev.filter(g => g !== goal);
@@ -71,12 +70,12 @@ const GetStarted = () => {
     }
   };
   
-  const handlePathSelection = (path) => {
+  const handlePathSelection = (path: string) => {
     setSelectedPath(path);
     form.setValue("path", path);
   };
   
-  const handleDateSelection = (date) => {
+  const handleDateSelection = (date: Date | undefined) => {
     setSelectedDate(date);
     form.setValue("date", date);
   };
@@ -357,7 +356,7 @@ const GetStarted = () => {
             <Card>
               <CardContent className="p-6 text-center">
                 <div className="w-12 h-12 bg-tekmo-teal/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Calendar size={24} className="text-tekmo-teal" />
+                  <CalendarIcon size={24} className="text-tekmo-teal" />
                 </div>
                 <h3 className="font-medium mb-2">We Call You</h3>
                 <p className="text-sm text-muted-foreground">We'll reach out at your scheduled time to discuss your needs.</p>
