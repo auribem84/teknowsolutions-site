@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { MessageCircle, X } from "lucide-react";
+import { ArrowRight, MessageCircle, X } from "lucide-react"; // Added ArrowRight, kept others for now to show change, will remove if this works
 import { Button } from "@/components/ui/button";
 import { Link as ScrollLink } from "react-scroll";
 
@@ -30,7 +30,7 @@ const FloatingActionButton = () => {
                 onClick={() => setIsOpen(false)}
                 className="cursor-pointer flex items-center justify-center w-full h-full"
               >
-                <span>Schedule a Call</span> {/* Wrapped text in span */}
+                <span>Schedule a Call</span>
               </ScrollLink>
             </Button>
             <Button variant="outline" className="w-full" asChild>
@@ -43,7 +43,7 @@ const FloatingActionButton = () => {
                 onClick={() => setIsOpen(false)}
                 className="cursor-pointer flex items-center justify-center w-full h-full"
               >
-                <span>Chat with Us</span> {/* Wrapped text in span */}
+                <span>Chat with Us</span>
               </ScrollLink>
             </Button>
           </div>
@@ -54,7 +54,8 @@ const FloatingActionButton = () => {
         onClick={toggleOpen}
         className={`h-14 w-14 rounded-full bg-gradient-to-r from-tekmo-teal to-tekmo-purple hover:from-tekmo-purple hover:to-tekmo-teal shadow-lg transition-all`}
       >
-        {isOpen ? <X size={24} /> : <MessageCircle size={24} />}
+        {/* Replacing X and MessageCircle with ArrowRight for testing */}
+        {isOpen ? <ArrowRight size={24} /> : <ArrowRight size={24} />}
       </Button>
     </div>
   );

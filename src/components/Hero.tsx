@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight, Play } from "lucide-react"; // Play will be replaced
 import { Link as ScrollLink } from "react-scroll";
 
 const Hero = () => {
@@ -15,7 +15,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 z-10">
         <div className="max-w-3xl text-center mx-auto">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg animate-fade-in">
-            Transform Your IT with <span className="bg-clip-text text-transparent bg-gradient-to-r from-tekmo-teal to-tekmo-purple">Teknowsolutions</span> {/* tekmo */}
+            Transform Your IT with <span className="bg-clip-text text-transparent bg-gradient-to-r from-tekmo-teal to-tekmo-purple">Teknowsolutions</span>
           </h1>
           <p className="text-lg md:text-xl text-white/90 mb-8 animate-fade-up">
             Expert consulting for SMBs in infrastructure, cloud, security & beyond. 
@@ -25,7 +25,7 @@ const Hero = () => {
             <Button 
               variant="default" 
               size="lg" 
-              className="bg-gradient-to-r from-tekmo-teal to-tekmo-purple hover:from-tekmo-purple hover:to-tekmo-teal transition-all" /* tekmo */
+              className="bg-gradient-to-r from-tekmo-teal to-tekmo-purple hover:from-tekmo-purple hover:to-tekmo-teal transition-all"
               asChild
             >
               <ScrollLink to="contact" spy={true} smooth={true} offset={-70} duration={500} className="cursor-pointer">
@@ -42,7 +42,9 @@ const Hero = () => {
             >
               <ScrollLink to="contact" spy={true} smooth={true} offset={-70} duration={500} className="cursor-pointer">
                 <span>
-                  <Play size={16} className="mr-2" /> Schedule a Free Consultation
+                  {/* Replacing Play with ArrowRight for testing */}
+                  <ArrowRight size={16} className="mr-2" /> 
+                  Schedule a Free Consultation
                 </span>
               </ScrollLink>
             </Button>
@@ -51,8 +53,8 @@ const Hero = () => {
       </div>
       
       {/* Animated Triangle Decoration */}
-      <div className="absolute -bottom-12 -left-12 w-48 h-48 bg-tekmo-teal/20 rounded-3xl rotate-12 animate-float"></div> {/* tekmo */}
-      <div className="absolute -top-20 -right-12 w-60 h-60 bg-tekmo-purple/20 rounded-3xl -rotate-12 animate-float" style={{ animationDelay: "2s" }}></div> {/* tekmo */}
+      <div className="absolute -bottom-12 -left-12 w-48 h-48 bg-tekmo-teal/20 rounded-3xl rotate-12 animate-float"></div>
+      <div className="absolute -top-20 -right-12 w-60 h-60 bg-tekmo-purple/20 rounded-3xl -rotate-12 animate-float" style={{ animationDelay: "2s" }}></div>
     </section>
   );
 };
