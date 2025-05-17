@@ -1,5 +1,6 @@
+
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play } from "lucide-react"; // Play will be replaced
+import { ArrowRight } from "lucide-react"; // Play icon removed
 import { Link as ScrollLink } from "react-scroll";
 
 const Hero = () => {
@@ -30,24 +31,11 @@ const Hero = () => {
             >
               <ScrollLink to="contact" spy={true} smooth={true} offset={-70} duration={500} className="cursor-pointer">
                 <span>
-                  Start Your Free Audit <ArrowRight size={16} className="ml-2" />
+                  Get Started <ArrowRight size={16} className="ml-2" />
                 </span>
               </ScrollLink>
             </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="text-white border-white/60 hover:bg-white/10"
-              asChild
-            >
-              <ScrollLink to="contact" spy={true} smooth={true} offset={-70} duration={500} className="cursor-pointer">
-                <span>
-                  {/* Replacing Play with ArrowRight for testing */}
-                  <ArrowRight size={16} className="mr-2" /> 
-                  Schedule a Free Consultation
-                </span>
-              </ScrollLink>
-            </Button>
+            {/* The second button is removed as per the request to consolidate into one "Get Started" button */}
           </div>
         </div>
       </div>
