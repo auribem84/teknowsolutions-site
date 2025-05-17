@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { MessageCircle, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link as ScrollLink } from "react-scroll"; // Changed from react-router-dom
+import { Link as ScrollLink } from "react-scroll";
 
 const FloatingActionButton = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,9 +28,9 @@ const FloatingActionButton = () => {
                 offset={-70} 
                 duration={500} 
                 onClick={() => setIsOpen(false)}
-                className="cursor-pointer flex items-center justify-center w-full h-full" // Added className for proper rendering within Button
+                className="cursor-pointer flex items-center justify-center w-full h-full"
               >
-                Schedule a Call
+                <span>Schedule a Call</span> {/* Wrapped text in span */}
               </ScrollLink>
             </Button>
             <Button variant="outline" className="w-full" asChild>
@@ -41,9 +41,9 @@ const FloatingActionButton = () => {
                 offset={-70} 
                 duration={500} 
                 onClick={() => setIsOpen(false)}
-                className="cursor-pointer flex items-center justify-center w-full h-full" // Added className for proper rendering within Button
+                className="cursor-pointer flex items-center justify-center w-full h-full"
               >
-                Chat with Us
+                <span>Chat with Us</span> {/* Wrapped text in span */}
               </ScrollLink>
             </Button>
           </div>
