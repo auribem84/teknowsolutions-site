@@ -53,7 +53,7 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				tekmo: {
+				teknow: { // Changed from tekmo to teknow
 					blue: '#0F172A',
 					teal: '#0EA5E9',
 					purple: '#8B5CF6',
@@ -130,9 +130,11 @@ export default {
 				'fade-up': 'fade-up 0.8s ease-out',
 			},
 			backgroundImage: {
+                // These hex codes correspond to the teknow colors: blue, teal, purple, pink
 				'gradient-hero': 'linear-gradient(45deg, #0F172A, #0EA5E9, #8B5CF6, #D946EF)',
 			}
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
 } satisfies Config;
+

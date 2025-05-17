@@ -1,6 +1,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { Cloud, Shield, Cog, Code, Server } from "lucide-react";
+import { Link as ScrollLink } from 'react-scroll';
 
 type ServiceCard = {
   icon: React.ElementType;
@@ -20,7 +21,7 @@ const services: ServiceCard[] = [
     icon: Cloud,
     title: "Cloud & DevOps",
     description: "Accelerate innovation with seamless cloud migration and DevOps implementation.",
-    color: "from-tekmo-teal to-sky-600",
+    color: "from-teknow-teal to-sky-600", // tekmo to teknow
   },
   {
     icon: Shield,
@@ -32,13 +33,13 @@ const services: ServiceCard[] = [
     icon: Cog,
     title: "Process Automation",
     description: "Streamline operations with intelligent automation and workflow optimization.",
-    color: "from-tekmo-orange to-amber-600",
+    color: "from-teknow-orange to-amber-600", // tekmo to teknow
   },
   {
     icon: Code,
     title: "App Development",
     description: "Create custom applications tailored to your unique business requirements.",
-    color: "from-tekmo-purple to-indigo-600",
+    color: "from-teknow-purple to-indigo-600", // tekmo to teknow
   },
 ];
 
@@ -77,7 +78,7 @@ const ServicesGrid = () => {
   }, []);
 
   return (
-    <section id="solutions" className="py-20 px-4" ref={sectionRef}>
+    <section id="services" className="py-20 px-4 scroll-mt-20" ref={sectionRef}> {/* Added id and scroll-mt */}
       <div className="container mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Solutions</h2>
@@ -102,9 +103,16 @@ const ServicesGrid = () => {
                 </div>
                 <h3 className="text-xl font-bold mb-3">{service.title}</h3>
                 <p className="text-muted-foreground mb-6 flex-grow">{service.description}</p>
-                <a href="#" className="text-tekmo-teal hover:text-tekmo-purple font-medium transition-colors">
+                <ScrollLink 
+                  to="contact" 
+                  spy={true} 
+                  smooth={true} 
+                  offset={-70} 
+                  duration={500} 
+                  className="text-teknow-teal hover:text-teknow-purple font-medium transition-colors cursor-pointer" /* tekmo to teknow */
+                >
                   Learn More →
-                </a>
+                </ScrollLink>
               </div>
             </div>
           ))}
@@ -115,3 +123,4 @@ const ServicesGrid = () => {
 };
 
 export default ServicesGrid;
+

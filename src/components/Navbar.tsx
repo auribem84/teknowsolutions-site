@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
@@ -24,33 +24,52 @@ const Navbar = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+  
+  const navLinkProps = {
+    spy: true,
+    smooth: true,
+    offset: -70, // Adjust offset as needed for fixed navbar
+    duration: 500,
+    className: "text-foreground hover:text-teknow-teal transition cursor-pointer",
+    activeClass: "text-teknow-teal font-semibold"
+  };
+
+  const mobileNavLinkProps = {
+    ...navLinkProps,
+    className: "text-foreground hover:text-teknow-teal transition py-2 cursor-pointer",
+    onClick: () => setIsMenuOpen(false)
+  };
+  
+  const scrollToTop = () => {
+    scroll.scrollToTop({ duration: 500, smooth: true });
+    if(isMenuOpen) setIsMenuOpen(false);
+  };
+
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/80 dark:bg-tekmo-blue/80 backdrop-blur-md py-3 shadow-md' : 'py-6'
+      isScrolled ? 'bg-white/80 dark:bg-teknow-blue/80 backdrop-blur-md py-3 shadow-md' : 'py-6' // tekmo-blue to teknow-blue
     }`}>
       <div className="container mx-auto px-4 flex items-center justify-between">
         <div className="flex items-center">
-          <Link to="/" className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-tekmo-teal to-tekmo-purple">
-            Tekmowsolutions
-          </Link>
+          <button onClick={scrollToTop} className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-teknow-teal to-teknow-purple"> {/* tekmo to teknow */}
+            Teknowsolutions {/* Company Name Change */}
+          </button>
         </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
-          <Link to="/" className="text-foreground hover:text-tekmo-teal transition">Home</Link>
-          <Link to="/about" className="text-foreground hover:text-tekmo-teal transition">About Us</Link>
-          <Link to="/solutions" className="text-foreground hover:text-tekmo-teal transition">Solutions</Link>
-          <Link to="/playbooks" className="text-foreground hover:text-tekmo-teal transition">Playbooks</Link>
-          <Link to="/resources" className="text-foreground hover:text-tekmo-teal transition">Resources</Link>
-          <Link to="/contact" className="text-foreground hover:text-tekmo-teal transition">Contact</Link>
+          <button onClick={scrollToTop} className={navLinkProps.className}>Home</button>
+          <ScrollLink to="about" {...navLinkProps}>About Us</ScrollLink>
+          <ScrollLink to="services" {...navLinkProps}>Services</ScrollLink>
+          <ScrollLink to="contact" {...navLinkProps}>Contact</ScrollLink>
         </nav>
 
         <div className="hidden md:flex items-center space-x-3">
-          <Button variant="default" className="bg-gradient-to-r from-tekmo-teal to-tekmo-purple hover:from-tekmo-purple hover:to-tekmo-teal transition-all" asChild>
-            <Link to="/get-started">
+          <Button variant="default" className="bg-gradient-to-r from-teknow-teal to-teknow-purple hover:from-teknow-purple hover:to-teknow-teal transition-all" asChild> {/* tekmo to teknow */}
+            <ScrollLink to="contact" spy={true} smooth={true} offset={-70} duration={500} className="cursor-pointer">
               Get Started
-            </Link>
+            </ScrollLink>
           </Button>
         </div>
 
@@ -62,18 +81,16 @@ const Navbar = () => {
 
       {/* Mobile Navigation Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white dark:bg-tekmo-blue w-full py-4 px-6 shadow-lg absolute top-full left-0 right-0 animate-fade-in">
+        <div className="md:hidden bg-white dark:bg-teknow-blue w-full py-4 px-6 shadow-lg absolute top-full left-0 right-0 animate-fade-in"> {/* tekmo-blue to teknow-blue */}
           <nav className="flex flex-col space-y-4">
-            <Link to="/" className="text-foreground hover:text-tekmo-teal transition py-2" onClick={() => setIsMenuOpen(false)}>Home</Link>
-            <Link to="/about" className="text-foreground hover:text-tekmo-teal transition py-2" onClick={() => setIsMenuOpen(false)}>About Us</Link>
-            <Link to="/solutions" className="text-foreground hover:text-tekmo-teal transition py-2" onClick={() => setIsMenuOpen(false)}>Solutions</Link>
-            <Link to="/playbooks" className="text-foreground hover:text-tekmo-teal transition py-2" onClick={() => setIsMenuOpen(false)}>Playbooks</Link>
-            <Link to="/resources" className="text-foreground hover:text-tekmo-teal transition py-2" onClick={() => setIsMenuOpen(false)}>Resources</Link>
-            <Link to="/contact" className="text-foreground hover:text-tekmo-teal transition py-2" onClick={() => setIsMenuOpen(false)}>Contact</Link>
-            <Button variant="default" className="w-full bg-gradient-to-r from-tekmo-teal to-tekmo-purple hover:from-tekmo-purple hover:to-tekmo-teal transition-all" asChild>
-              <Link to="/get-started" onClick={() => setIsMenuOpen(false)}>
+            <button onClick={scrollToTop} className={mobileNavLinkProps.className}>Home</button>
+            <ScrollLink to="about" {...mobileNavLinkProps}>About Us</ScrollLink>
+            <ScrollLink to="services" {...mobileNavLinkProps}>Services</ScrollLink>
+            <ScrollLink to="contact" {...mobileNavLinkProps}>Contact</ScrollLink>
+            <Button variant="default" className="w-full bg-gradient-to-r from-teknow-teal to-teknow-purple hover:from-teknow-purple hover:to-teknow-teal transition-all" asChild> {/* tekmo to teknow */}
+              <ScrollLink to="contact" spy={true} smooth={true} offset={-70} duration={500} className="cursor-pointer w-full text-center" onClick={() => setIsMenuOpen(false)}>
                 Get Started
-              </Link>
+              </ScrollLink>
             </Button>
           </nav>
         </div>
@@ -83,3 +100,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

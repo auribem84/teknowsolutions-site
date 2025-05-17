@@ -101,7 +101,7 @@
   }
   
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-tekmo-teal to-tekmo-purple animate-gradient-flow;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-teknow-teal to-teknow-purple animate-gradient-flow; /* Updated to teknow */
   }
   
   .animated-on-scroll {
@@ -116,3 +116,4 @@
     @apply bg-gradient-hero bg-cover bg-center animate-gradient-flow;
   }
 }
+
