@@ -30,13 +30,13 @@ const Navbar = () => {
     smooth: true,
     offset: -70, // Adjust offset as needed for fixed navbar
     duration: 500,
-    className: "text-foreground hover:text-teknow-teal transition cursor-pointer",
-    activeClass: "text-teknow-teal font-semibold"
+    className: "text-foreground hover:text-tekmo-teal transition cursor-pointer", // tekmo
+    activeClass: "text-tekmo-teal font-semibold" // tekmo
   };
 
   const mobileNavLinkProps = {
     ...navLinkProps,
-    className: "text-foreground hover:text-teknow-teal transition py-2 cursor-pointer",
+    className: "text-foreground hover:text-tekmo-teal transition py-2 cursor-pointer", // tekmo
     onClick: () => setIsMenuOpen(false)
   };
   
@@ -48,12 +48,12 @@ const Navbar = () => {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/80 dark:bg-teknow-blue/80 backdrop-blur-md py-3 shadow-md' : 'py-6' // tekmo-blue to teknow-blue
+      isScrolled ? 'bg-white/80 dark:bg-tekmo-blue/80 backdrop-blur-md py-3 shadow-md' : 'py-6' // tekmo-blue
     }`}>
       <div className="container mx-auto px-4 flex items-center justify-between">
         <div className="flex items-center">
-          <button onClick={scrollToTop} className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-teknow-teal to-teknow-purple"> {/* tekmo to teknow */}
-            Teknowsolutions {/* Company Name Change */}
+          <button onClick={scrollToTop} className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-tekmo-teal to-tekmo-purple"> {/* tekmo */}
+            Teknowsolutions
           </button>
         </div>
 
@@ -66,7 +66,7 @@ const Navbar = () => {
         </nav>
 
         <div className="hidden md:flex items-center space-x-3">
-          <Button variant="default" className="bg-gradient-to-r from-teknow-teal to-teknow-purple hover:from-teknow-purple hover:to-teknow-teal transition-all" asChild> {/* tekmo to teknow */}
+          <Button variant="default" className="bg-gradient-to-r from-tekmo-teal to-tekmo-purple hover:from-tekmo-purple hover:to-tekmo-teal transition-all" asChild> {/* tekmo */}
             <ScrollLink to="contact" spy={true} smooth={true} offset={-70} duration={500} className="cursor-pointer">
               Get Started
             </ScrollLink>
@@ -81,13 +81,13 @@ const Navbar = () => {
 
       {/* Mobile Navigation Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white dark:bg-teknow-blue w-full py-4 px-6 shadow-lg absolute top-full left-0 right-0 animate-fade-in"> {/* tekmo-blue to teknow-blue */}
+        <div className="md:hidden bg-white dark:bg-tekmo-blue w-full py-4 px-6 shadow-lg absolute top-full left-0 right-0 animate-fade-in"> {/* tekmo-blue */}
           <nav className="flex flex-col space-y-4">
             <button onClick={scrollToTop} className={mobileNavLinkProps.className}>Home</button>
             <ScrollLink to="about" {...mobileNavLinkProps}>About Us</ScrollLink>
             <ScrollLink to="services" {...mobileNavLinkProps}>Services</ScrollLink>
             <ScrollLink to="contact" {...mobileNavLinkProps}>Contact</ScrollLink>
-            <Button variant="default" className="w-full bg-gradient-to-r from-teknow-teal to-teknow-purple hover:from-teknow-purple hover:to-teknow-teal transition-all" asChild> {/* tekmo to teknow */}
+            <Button variant="default" className="w-full bg-gradient-to-r from-tekmo-teal to-tekmo-purple hover:from-tekmo-purple hover:to-tekmo-teal transition-all" asChild> {/* tekmo */}
               <ScrollLink to="contact" spy={true} smooth={true} offset={-70} duration={500} className="cursor-pointer w-full text-center" onClick={() => setIsMenuOpen(false)}>
                 Get Started
               </ScrollLink>

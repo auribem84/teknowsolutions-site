@@ -21,7 +21,7 @@ const services: ServiceCard[] = [
     icon: Cloud,
     title: "Cloud & DevOps",
     description: "Accelerate innovation with seamless cloud migration and DevOps implementation.",
-    color: "from-teknow-teal to-sky-600", // tekmo to teknow
+    color: "from-tekmo-teal to-sky-600", // tekmo
   },
   {
     icon: Shield,
@@ -33,13 +33,13 @@ const services: ServiceCard[] = [
     icon: Cog,
     title: "Process Automation",
     description: "Streamline operations with intelligent automation and workflow optimization.",
-    color: "from-teknow-orange to-amber-600", // tekmo to teknow
+    color: "from-tekmo-orange to-amber-600", // tekmo
   },
   {
     icon: Code,
     title: "App Development",
     description: "Create custom applications tailored to your unique business requirements.",
-    color: "from-teknow-purple to-indigo-600", // tekmo to teknow
+    color: "from-tekmo-purple to-indigo-600", // tekmo
   },
 ];
 
@@ -78,7 +78,7 @@ const ServicesGrid = () => {
   }, []);
 
   return (
-    <section id="services" className="py-20 px-4 scroll-mt-20" ref={sectionRef}> {/* Added id and scroll-mt */}
+    <section id="services" className="py-20 px-4 scroll-mt-20" ref={sectionRef}>
       <div className="container mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Solutions</h2>
@@ -109,7 +109,7 @@ const ServicesGrid = () => {
                   smooth={true} 
                   offset={-70} 
                   duration={500} 
-                  className="text-teknow-teal hover:text-teknow-purple font-medium transition-colors cursor-pointer" /* tekmo to teknow */
+                  className="text-tekmo-teal hover:text-tekmo-purple font-medium transition-colors cursor-pointer" /* tekmo */
                 >
                   Learn More →
                 </ScrollLink>

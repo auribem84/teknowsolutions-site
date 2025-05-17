@@ -1,11 +1,11 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
-import { Link as ScrollLink } from "react-scroll"; // Changed to ScrollLink for consistency if needed, but CTA buttons usually go to contact page/section
+import { Link as ScrollLink } from "react-scroll";
 
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden scroll-mt-20"> {/* Added id and scroll-mt */}
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden scroll-mt-20">
       {/* Animated Background */}
       <div className="absolute inset-0 hero-gradient"></div>
       
@@ -16,7 +16,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 z-10">
         <div className="max-w-3xl text-center mx-auto">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg animate-fade-in">
-            Transform Your IT with <span className="bg-clip-text text-transparent bg-gradient-to-r from-teknow-teal to-teknow-purple">Teknowsolutions</span> {/* Company Name & tekmo to teknow */}
+            Transform Your IT with <span className="bg-clip-text text-transparent bg-gradient-to-r from-tekmo-teal to-tekmo-purple">Teknowsolutions</span> {/* tekmo */}
           </h1>
           <p className="text-lg md:text-xl text-white/90 mb-8 animate-fade-up">
             Expert consulting for SMBs in infrastructure, cloud, security & beyond. 
@@ -26,7 +26,7 @@ const Hero = () => {
             <Button 
               variant="default" 
               size="lg" 
-              className="bg-gradient-to-r from-teknow-teal to-teknow-purple hover:from-teknow-purple hover:to-teknow-teal transition-all" /* tekmo to teknow */
+              className="bg-gradient-to-r from-tekmo-teal to-tekmo-purple hover:from-tekmo-purple hover:to-tekmo-teal transition-all" /* tekmo */
               asChild
             >
               <ScrollLink to="contact" spy={true} smooth={true} offset={-70} duration={500} className="cursor-pointer">
@@ -48,8 +48,8 @@ const Hero = () => {
       </div>
       
       {/* Animated Triangle Decoration */}
-      <div className="absolute -bottom-12 -left-12 w-48 h-48 bg-teknow-teal/20 rounded-3xl rotate-12 animate-float"></div> {/* tekmo to teknow */}
-      <div className="absolute -top-20 -right-12 w-60 h-60 bg-teknow-purple/20 rounded-3xl -rotate-12 animate-float" style={{ animationDelay: "2s" }}></div> {/* tekmo to teknow */}
+      <div className="absolute -bottom-12 -left-12 w-48 h-48 bg-tekmo-teal/20 rounded-3xl rotate-12 animate-float"></div> {/* tekmo */}
+      <div className="absolute -top-20 -right-12 w-60 h-60 bg-tekmo-purple/20 rounded-3xl -rotate-12 animate-float" style={{ animationDelay: "2s" }}></div> {/* tekmo */}
     </section>
   );
 };

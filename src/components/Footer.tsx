@@ -15,19 +15,18 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-teknow-blue text-white pt-16 pb-8 px-4"> {/* tekmo to teknow */}
+    <footer className="bg-tekmo-blue text-white pt-16 pb-8 px-4"> {/* tekmo */}
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Company Info */}
           <div>
-            <h3 className="text-2xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-teknow-teal to-teknow-purple"> {/* tekmo to teknow */}
-              Teknowsolutions {/* Company Name Change */}
+            <h3 className="text-2xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-tekmo-teal to-tekmo-purple"> {/* tekmo */}
+              Teknowsolutions
             </h3>
             <p className="text-white/70 mb-6">
               Expert IT consulting for small and mid-size businesses. Transform your technology, empower your business.
             </p>
             <div className="flex space-x-4">
-              {/* ... keep existing code (social media icons) */}
               <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd"></path></svg>
               </a>
@@ -71,23 +70,23 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-6">Contact Us</h4>
             <ul className="space-y-4">
               <li className="flex items-start">
-                <MapPin className="mr-3 mt-1 text-teknow-teal" size={18} /> {/* tekmo to teknow */}
+                <MapPin className="mr-3 mt-1 text-tekmo-teal" size={18} /> {/* tekmo */}
                 <span className="text-white/70">123 Tech Avenue, Suite 500<br />San Francisco, CA 94107</span>
               </li>
               <li className="flex items-center">
-                <Phone className="mr-3 text-teknow-teal" size={18} /> {/* tekmo to teknow */}
+                <Phone className="mr-3 text-tekmo-teal" size={18} /> {/* tekmo */}
                 <a href="tel:+1234567890" className="text-white/70 hover:text-white transition-colors">+1 (234) 567-890</a>
               </li>
               <li className="flex items-center">
-                <Mail className="mr-3 text-teknow-teal" size={18} /> {/* tekmo to teknow */}
-                <a href="mailto:info@teknowsolutions.com" className="text-white/70 hover:text-white transition-colors">info@teknowsolutions.com</a> {/* Company Name Change */}
+                <Mail className="mr-3 text-tekmo-teal" size={18} /> {/* tekmo */}
+                <a href="mailto:info@teknowsolutions.com" className="text-white/70 hover:text-white transition-colors">info@teknowsolutions.com</a>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-white/20 mt-16 pt-8 text-center text-white/60">
-          <p>© {new Date().getFullYear()} Teknowsolutions. All rights reserved.</p> {/* Company Name Change */}
+          <p>© {new Date().getFullYear()} Teknowsolutions. All rights reserved.</p>
         </div>
       </div>
     </footer>
