@@ -14,13 +14,17 @@ const CTA = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button size="lg" className="bg-gradient-to-r from-tekmo-teal to-tekmo-purple hover:from-tekmo-purple hover:to-tekmo-teal transition-all" asChild> {/* tekmo */}
             <ScrollLink to="contact" spy={true} smooth={true} offset={-70} duration={500} className="cursor-pointer">
-              <Calendar size={16} className="mr-2" />
-              Schedule a Free Consultation
+              <span>
+                <Calendar size={16} className="mr-2" />
+                Schedule a Free Consultation
+              </span>
             </ScrollLink>
           </Button>
           <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10" asChild>
             <ScrollLink to="contact" spy={true} smooth={true} offset={-70} duration={500} className="cursor-pointer">
-              Start Your Free Audit <ArrowRight size={16} className="ml-2" />
+              <span>
+                Start Your Free Audit <ArrowRight size={16} className="ml-2" />
+              </span>
             </ScrollLink>
           </Button>
         </div>
@@ -30,4 +34,3 @@ const CTA = () => {
 };
 
 export default CTA;
-

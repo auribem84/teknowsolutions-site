@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { MessageCircle, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll"; // Changed from react-router-dom
 
 const FloatingActionButton = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,10 +21,30 @@ const FloatingActionButton = () => {
           </div>
           <div className="space-y-2">
             <Button variant="default" className="w-full bg-gradient-to-r from-tekmo-teal to-tekmo-purple" asChild>
-              <Link to="/contact">Schedule a Call</Link>
+              <ScrollLink 
+                to="contact" 
+                spy={true} 
+                smooth={true} 
+                offset={-70} 
+                duration={500} 
+                onClick={() => setIsOpen(false)}
+                className="cursor-pointer flex items-center justify-center w-full h-full" // Added className for proper rendering within Button
+              >
+                Schedule a Call
+              </ScrollLink>
             </Button>
             <Button variant="outline" className="w-full" asChild>
-              <Link to="/contact">Chat with Us</Link>
+              <ScrollLink 
+                to="contact" 
+                spy={true} 
+                smooth={true} 
+                offset={-70} 
+                duration={500} 
+                onClick={() => setIsOpen(false)}
+                className="cursor-pointer flex items-center justify-center w-full h-full" // Added className for proper rendering within Button
+              >
+                Chat with Us
+              </ScrollLink>
             </Button>
           </div>
         </div>

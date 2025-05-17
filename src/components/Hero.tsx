@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 import { Link as ScrollLink } from "react-scroll";
@@ -30,7 +29,9 @@ const Hero = () => {
               asChild
             >
               <ScrollLink to="contact" spy={true} smooth={true} offset={-70} duration={500} className="cursor-pointer">
-                Start Your Free Audit <ArrowRight size={16} className="ml-2" />
+                <span>
+                  Start Your Free Audit <ArrowRight size={16} className="ml-2" />
+                </span>
               </ScrollLink>
             </Button>
             <Button 
@@ -40,7 +41,9 @@ const Hero = () => {
               asChild
             >
               <ScrollLink to="contact" spy={true} smooth={true} offset={-70} duration={500} className="cursor-pointer">
-                <Play size={16} className="mr-2" /> Schedule a Free Consultation
+                <span>
+                  <Play size={16} className="mr-2" /> Schedule a Free Consultation
+                </span>
               </ScrollLink>
             </Button>
           </div>
@@ -55,4 +58,3 @@ const Hero = () => {
 };
 
 export default Hero;
-

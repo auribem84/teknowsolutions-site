@@ -68,7 +68,7 @@ const Navbar = () => {
         <div className="hidden md:flex items-center space-x-3">
           <Button variant="default" className="bg-gradient-to-r from-tekmo-teal to-tekmo-purple hover:from-tekmo-purple hover:to-tekmo-teal transition-all" asChild> {/* tekmo */}
             <ScrollLink to="contact" spy={true} smooth={true} offset={-70} duration={500} className="cursor-pointer">
-              Get Started
+              <span>Get Started</span>
             </ScrollLink>
           </Button>
         </div>
@@ -89,7 +89,7 @@ const Navbar = () => {
             <ScrollLink to="contact" {...mobileNavLinkProps}>Contact</ScrollLink>
             <Button variant="default" className="w-full bg-gradient-to-r from-tekmo-teal to-tekmo-purple hover:from-tekmo-purple hover:to-tekmo-teal transition-all" asChild> {/* tekmo */}
               <ScrollLink to="contact" spy={true} smooth={true} offset={-70} duration={500} className="cursor-pointer w-full text-center" onClick={() => setIsMenuOpen(false)}>
-                Get Started
+                <span>Get Started</span>
               </ScrollLink>
             </Button>
           </nav>
@@ -100,4 +100,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
